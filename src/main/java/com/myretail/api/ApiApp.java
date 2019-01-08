@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ApiApp {
     public static void main(String[] args) {
-        // Starts the springboot application.
+        // Sets up default configuration, starts spring application, performs class path scan and starts tomcat server.
         SpringApplication.run(ApiApp.class, args);
     }
 }
