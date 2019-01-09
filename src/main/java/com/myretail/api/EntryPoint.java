@@ -5,9 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 // Initialize our spring boot application on the App entry point
 @SpringBootApplication
-public class ApiApp {
+public class EntryPoint {
     public static void main(String[] args) {
         // Sets up default configuration, starts spring application, performs class path scan and starts tomcat server.
-        SpringApplication.run(ApiApp.class, args);
+        SpringApplication.run(EntryPoint.class, args);
     }
 }
