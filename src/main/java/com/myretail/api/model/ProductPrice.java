@@ -1,5 +1,7 @@
 package com.myretail.api.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -36,6 +38,8 @@ public class ProductPrice {
         this.value = value;
     }
 
+    // Add JSON Property to match specifications
+    @JsonProperty("currency_code")
     public String getCurrencyCode() {
         return currency_code;
     }
