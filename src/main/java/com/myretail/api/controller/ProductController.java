@@ -1,7 +1,7 @@
 package com.myretail.api.controller;
 
-import com.myretail.api.model.CurrentPrice;
-import com.myretail.api.model.Product;
+import com.myretail.api.dao.CurrentPrice;
+import com.myretail.api.dao.Product;
 import com.myretail.api.service.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

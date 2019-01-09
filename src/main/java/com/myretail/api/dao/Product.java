@@ -1,4 +1,4 @@
-package com.myretail.api.model;
+package com.myretail.api.dao;
 
 public class Product {
 

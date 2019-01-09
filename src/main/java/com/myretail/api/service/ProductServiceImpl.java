@@ -1,7 +1,7 @@
 package com.myretail.api.service;
 
-import com.myretail.api.model.CurrentPrice;
-import com.myretail.api.model.Product;
+import com.myretail.api.dao.CurrentPrice;
+import com.myretail.api.dao.Product;
 import org.springframework.stereotype.Service;
 
 @Service
