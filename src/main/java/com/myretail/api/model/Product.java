@@ -2,24 +2,24 @@ package com.myretail.api.model;
 
 public class Product {
 
-    private Long id;
+    private int id;
     private String name;
     private ProductPrice productPrice;
 
     public Product() {
     }
 
-    public Product(Long id, String name, ProductPrice productPrice) {
+    public Product(int id, String name, ProductPrice productPrice) {
         this.id = id;
         this.name = name;
         this.productPrice = productPrice;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

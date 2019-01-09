@@ -16,18 +16,13 @@ public class ProductController {
     @Autowired
     private ProductServiceImpl productService;
 
-    @RequestMapping("/products")
-    public List<Product> getAllProducts() {
-        return Arrays.asList(
-                new Product(0L, "Product 1", new ProductPrice()),
-                new Product(2L, "Product 2", new ProductPrice()),
-                new Product(4L, "Product 4", new ProductPrice())
-        );
-    }
-
     @GetMapping("/products/{id}")
     @ResponseStatus(HttpStatus.OK)
-    Product getProduct(@PathVariable Long id) {
+    ProductPrice getProduct(@PathVariable int id) {
         return productService.findById(id);
     }
+
+    @GetMapping("/products/")
+    @ResponseStatus(HttpStatus.OK)
+    List<ProductPrice> getAllProducts() { return productService.findAll(); }
 }

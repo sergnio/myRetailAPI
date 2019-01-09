@@ -1,29 +1,31 @@
 package com.myretail.api.model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+// @Document ensures we are querying the 'myretail' collection, instead of the default 'productprice' collection
+@Document(collection = "myretail")
 public class ProductPrice {
 
-    @Id
-    private Long productId;
+    @Id private int id;
     private double value;
-    private String currencyCode;
+    private String currency_code;
 
     public ProductPrice() {
     }
 
-    public ProductPrice(Long productId, double value, String currencyCode) {
-        this.productId = productId;
+    public ProductPrice(int id, double value, String currencyCode) {
+        this.id = id;
         this.value = value;
-        this.currencyCode = currencyCode;
+        this.currency_code = currencyCode;
     }
 
-    public Long getProductId() {
-        return productId;
+    public int getId() {
+        return id;
     }
 
-    public void setProductId(Long productId) {
-        this.productId = productId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public double getValue() {
@@ -35,10 +37,10 @@ public class ProductPrice {
     }
 
     public String getCurrencyCode() {
-        return currencyCode;
+        return currency_code;
     }
 
     public void setCurrencyCode(String currencyCode) {
-        this.currencyCode = currencyCode;
+        this.currency_code = currencyCode;
     }
 }

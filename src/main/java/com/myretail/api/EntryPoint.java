@@ -14,16 +14,4 @@ public class EntryPoint {
         SpringApplication.run(EntryPoint.class, args);
     }
 
-//    @Override
-//    public void run(String... args) throws Exception {
-//        System.out.println("Products found:");
-//        for (ProductPrice product : repository.findAll()) {
-//            System.out.println(product);
-//        }
-//
-//        Long testid = 395727349L;
-//
-//        System.out.printf("Products found with id: %s \n", testid);
-//        System.out.println(repository.findByProductId(testid));
-//    }
 }
