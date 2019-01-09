@@ -1,17 +1,18 @@
-package com.myretail.api.dao;
+package com.myretail.api.model;
 
 public class Product {
 
     private Long id;
     private String name;
+    private ProductPrice productPrice;
 
     public Product() {
     }
 
-    public Product(Long id, String name, CurrentPrice currentPrice) {
+    public Product(Long id, String name, ProductPrice productPrice) {
         this.id = id;
         this.name = name;
-        this.currentPrice = currentPrice;
+        this.productPrice = productPrice;
     }
 
     public Long getId() {
@@ -30,13 +31,12 @@ public class Product {
         this.name = name;
     }
 
-    public CurrentPrice getCurrentPrice() {
-        return currentPrice;
+    public ProductPrice getProductPrice() {
+        return productPrice;
     }
 
-    public void setCurrentPrice(CurrentPrice currentPrice) {
-        this.currentPrice = currentPrice;
+    public void setProductPrice(ProductPrice productPrice) {
+        this.productPrice = productPrice;
     }
 
-    private CurrentPrice currentPrice;
 }

@@ -1,13 +1,11 @@
 package com.myretail.api.controller;
 
-import com.myretail.api.dao.CurrentPrice;
-import com.myretail.api.dao.Product;
+import com.myretail.api.model.ProductPrice;
+import com.myretail.api.model.Product;
 import com.myretail.api.service.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -21,13 +19,14 @@ public class ProductController {
     @RequestMapping("/products")
     public List<Product> getAllProducts() {
         return Arrays.asList(
-                new Product(0L, "Product 1", new CurrentPrice()),
-                new Product(2L, "Product 2", new CurrentPrice()),
-                new Product(4L, "Product 4", new CurrentPrice())
+                new Product(0L, "Product 1", new ProductPrice()),
+                new Product(2L, "Product 2", new ProductPrice()),
+                new Product(4L, "Product 4", new ProductPrice())
         );
     }
 
     @GetMapping("/products/{id}")
+    @ResponseStatus(HttpStatus.OK)
     Product getProduct(@PathVariable Long id) {
         return productService.findById(id);
     }

@@ -1,15 +1,29 @@
-package com.myretail.api.dao;
+package com.myretail.api.model;
 
-public class CurrentPrice {
+import org.springframework.data.annotation.Id;
+
+public class ProductPrice {
+
+    @Id
+    private Long productId;
     private double value;
     private String currencyCode;
 
-    public CurrentPrice() {
+    public ProductPrice() {
     }
 
-    public CurrentPrice(double value, String currencyCode) {
+    public ProductPrice(Long productId, double value, String currencyCode) {
+        this.productId = productId;
         this.value = value;
         this.currencyCode = currencyCode;
+    }
+
+    public Long getProductId() {
+        return productId;
+    }
+
+    public void setProductId(Long productId) {
+        this.productId = productId;
     }
 
     public double getValue() {
