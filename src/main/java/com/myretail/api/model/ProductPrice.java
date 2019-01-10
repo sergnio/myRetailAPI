@@ -1,14 +1,15 @@
 package com.myretail.api.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-// @Document ensures we are querying the 'myretail' collection, instead of the default 'productprice' collection
-@Document(collection = "myretail")
+// @Document ensures we are querying the 'productprice' collection
+@Document(collection = "productprice")
 public class ProductPrice {
 
+    @JsonIgnore
     @Id private int id;
     private double value;
     private String currency_code;

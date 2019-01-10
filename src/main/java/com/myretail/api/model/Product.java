@@ -1,9 +1,15 @@
 package com.myretail.api.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Product {
 
     private int id;
     private String name;
+    // Add JSON Property to match specifications
+    // NOTE: We can add JSON Property to the member variable because we aren't trying to match the variables
+    // to the database, unlike ProductPrice:getCurrencyCode
+    @JsonProperty("current_price")
     private ProductPrice productPrice;
 
     public Product() {

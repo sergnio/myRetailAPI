@@ -18,7 +18,7 @@ public class ProductController {
 
     @GetMapping("/products/{id}")
     @ResponseStatus(HttpStatus.OK)
-    ProductPrice getProduct(@PathVariable int id) {
+    Product getProduct(@PathVariable int id) {
         return productService.findById(id);
     }
 
