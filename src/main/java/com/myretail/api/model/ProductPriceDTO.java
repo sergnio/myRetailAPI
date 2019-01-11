@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 // ensures we are querying the 'productprice' collection
 @Document(collection = "productprice")
-public class ProductPrice {
+public class ProductPriceDTO {
 
     @JsonIgnore
     @Id private int id;
@@ -17,10 +17,10 @@ public class ProductPrice {
     @Field("currency_code")
     private String currencyCode;
 
-    public ProductPrice() {
+    public ProductPriceDTO() {
     }
 
-    public ProductPrice(int id, double value, String currencyCode) {
+    public ProductPriceDTO(int id, double value, String currencyCode) {
         this.id = id;
         this.value = value;
         this.currencyCode = currencyCode;

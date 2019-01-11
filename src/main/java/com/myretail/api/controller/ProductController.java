@@ -1,11 +1,11 @@
 package com.myretail.api.controller;
 
 import com.myretail.api.exception.ProductNotFoundException;
-import com.myretail.api.model.Product;
-import com.myretail.api.model.ProductPrice;
+import com.myretail.api.model.ProductDTO;
+import com.myretail.api.model.ProductPriceDTO;
 import com.myretail.api.service.ProductServiceImpl;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -21,31 +21,33 @@ public class ProductController {
 
     @GetMapping("products/{id}")
     @ResponseStatus(HttpStatus.OK)
-    Product getProduct(@PathVariable int id) {
+    ProductDTO getProduct(@PathVariable int id) {
         try {
-            Product product = productService.findById(id);
-            if (product == null) {
+            ProductDTO productDTO = productService.findById(id);
+            if (productDTO == null) {
                 throw new ProductNotFoundException(id);
             }
-            return product;
+            return productDTO;
         } catch (ProductNotFoundException e){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage(), e);
             // Add generic message for general exceptions
         } catch (Exception e) {
             throw new ResponseStatusException(
-                    HttpStatus.NOT_FOUND, "Product id: " + id + " not found on API server", e);
+                    HttpStatus.NOT_FOUND, "ProductDTO id: " + id + " not found on API server", e);
         }
     }
 
     @PutMapping("/products/{id}")
     @ResponseStatus(HttpStatus.CREATED)
-    ProductPrice updateProductPrice(@PathVariable int id, @RequestBody ProductPrice productPrice) {
-        productService.updateById(id, productPrice);
-        return productPrice;
+    ProductPriceDTO updateProductPrice(@PathVariable int id, @RequestBody ProductDTO productDTO) {
+
+        ProductPriceDTO productPriceDTO = new ProductPriceDTO();
+        productService.updateById(id, productPriceDTO);
+        return productPriceDTO;
     }
 
 
     @GetMapping("products/")
     @ResponseStatus(HttpStatus.OK)
-    List<ProductPrice> getAllProducts() { return productService.findAll(); }
+    List<ProductPriceDTO> getAllProducts() { return productService.findAll(); }
 }

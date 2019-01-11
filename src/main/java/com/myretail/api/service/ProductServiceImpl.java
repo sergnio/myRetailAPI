@@ -1,8 +1,8 @@
 package com.myretail.api.service;
 
 import com.myretail.api.exception.ProductNotFoundException;
-import com.myretail.api.model.Product;
-import com.myretail.api.model.ProductPrice;
+import com.myretail.api.model.ProductDTO;
+import com.myretail.api.model.ProductPriceDTO;
 import com.myretail.api.repository.ProductRepository;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -33,23 +33,24 @@ public class ProductServiceImpl implements ProductService {
 
 
     @Override
-    public Product findById(int id) throws ProductNotFoundException {
+    public ProductDTO findById(int id) throws ProductNotFoundException {
         // Also make microservice calls here probably
-        ProductPrice productPrice = productRepository.findById(id);
+        ProductPriceDTO productPriceDTO = productRepository.findById(id);
         String name = findProductNameById(id);
 
         // TODO - check how these microservices are actually done?? JP
-        return new Product(id, name, productPrice);
+        return new ProductDTO(id, name, productPriceDTO);
     }
 
     @Override
-    public List<ProductPrice> findAll() {
+    public List<ProductPriceDTO> findAll() {
         return productRepository.findAll();
     }
 
     @Override
-    public ProductPrice updateById(int id, ProductPrice productPrice) {
-        if (productPrice.getCurrencyCode() == null) {
+    public ProductPriceDTO updateById(int id, ProductPriceDTO productPriceDTO) {
+
+        if (productPriceDTO.getCurrencyCode() == null) {
 
         }
 
