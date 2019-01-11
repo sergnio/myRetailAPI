@@ -9,5 +9,7 @@ public interface ProductRepository extends MongoRepository<ProductPrice, Integer
 
     ProductPrice findById(int id);
 
+    ProductPrice save(int id);
+
     List<ProductPrice> findAll();
 }
