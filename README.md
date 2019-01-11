@@ -12,3 +12,11 @@ DB insert query - db.productprice.insertMany( [
 ] );
 
 DB ids - 13860428 13860429 13860425 13860424 13860421 13860419
+
+# Principles followed
+DRY
+KISS
+DTO pattern
+ServiceImpl pattern 
+Why? 
+These commented interfaces provide a specification of the application, a description of how it's intended to behave.
