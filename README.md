@@ -20,3 +20,33 @@ DTO pattern
 ServiceImpl pattern 
 Why? 
 These commented interfaces provide a specification of the application, a description of how it's intended to behave.
+
+<h3>myRetail Valid Requests</h3>
+
+**Description and Usage**: Retrieve a [product], containing
+
+<h3>PUT	../v1/products/{id}</h3>
+
+Description: If a product with {id} exists, update an existing product price
+
+Accepts: {id} path variable for a product id
+```
+{
+	"current_price": {
+		"value": int,
+		"currency_code": String
+	}
+}
+```
+
+Example:
+```
+{
+	"current_price": {
+		"value": 99330,
+		"currency_code": "EUR"
+	}
+}
+```
+
+***
