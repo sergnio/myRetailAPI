@@ -2,23 +2,23 @@ package com.myretail.api.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Product {
+public class ProductDTO {
 
     private int id;
     private String name;
     // Add JSON Property to match specifications
     // NOTE: We can add JSON Property to the member variable because we aren't trying to match the variables
-    // to the database, unlike ProductPrice:getCurrencyCode
+    // to the database, unlike ProductPriceDTO:getCurrencyCode
     @JsonProperty("current_price")
-    private ProductPrice productPrice;
+    private ProductPriceDTO productPriceDTO;
 
-    public Product() {
+    public ProductDTO() {
     }
 
-    public Product(int id, String name, ProductPrice productPrice) {
+    public ProductDTO(int id, String name, ProductPriceDTO productPriceDTO) {
         this.id = id;
         this.name = name;
-        this.productPrice = productPrice;
+        this.productPriceDTO = productPriceDTO;
     }
 
     public int getId() {
@@ -37,12 +37,12 @@ public class Product {
         this.name = name;
     }
 
-    public ProductPrice getProductPrice() {
-        return productPrice;
+    public ProductPriceDTO getProductPriceDTO() {
+        return productPriceDTO;
     }
 
-    public void setProductPrice(ProductPrice productPrice) {
-        this.productPrice = productPrice;
+    public void setProductPriceDTO(ProductPriceDTO productPriceDTO) {
+        this.productPriceDTO = productPriceDTO;
     }
 
 }

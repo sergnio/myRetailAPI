@@ -1,8 +1,8 @@
 package com.myretail.api.service;
 
 import com.myretail.api.exception.ProductNotFoundException;
-import com.myretail.api.model.Product;
-import com.myretail.api.model.ProductPrice;
+import com.myretail.api.model.ProductDTO;
+import com.myretail.api.model.ProductPriceDTO;
 
 import java.util.List;
 
@@ -12,9 +12,9 @@ public interface ProductService {
      * @param id product id
      * @return a product
      */
-    Product findById(int id) throws ProductNotFoundException;
+    ProductDTO findById(int id) throws ProductNotFoundException;
 
-    List<ProductPrice> findAll();
+    List<ProductPriceDTO> findAll();
 
-    ProductPrice updateById(int id, ProductPrice productPrice);
+    ProductPriceDTO updateById(int id, ProductPriceDTO productPriceDTO);
 }

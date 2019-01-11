@@ -1,15 +1,15 @@
 package com.myretail.api.repository;
 
-import com.myretail.api.model.ProductPrice;
+import com.myretail.api.model.ProductPriceDTO;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;
 
-public interface ProductRepository extends MongoRepository<ProductPrice, Integer> {
+public interface ProductRepository extends MongoRepository<ProductPriceDTO, Integer> {
 
-    ProductPrice findById(int id);
+    ProductPriceDTO findById(int id);
 
-    ProductPrice save(int id);
+    ProductPriceDTO save(int id);
 
-    List<ProductPrice> findAll();
+    List<ProductPriceDTO> findAll();
 }
