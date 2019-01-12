@@ -31,7 +31,6 @@ public class ProductServiceImpl implements ProductService {
         this.restTemplate = restTemplateBuilder.build();
     }
 
-
     @Override
     public ProductDTO findById(int id) throws ProductNotFoundException {
         // Also make microservice calls here probably
@@ -48,13 +47,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ProductPriceDTO updateById(int id, ProductPriceDTO productPriceDTO) {
-
-        if (productPriceDTO.getCurrencyCode() == null) {
-
-        }
-
-        return productRepository.save(id);
+    public ProductPriceDTO updateById(ProductPriceDTO productPriceDTO) {
+        return productRepository.save(productPriceDTO);
     }
 
     // takes a productprice
