@@ -4,6 +4,7 @@ import com.myretail.api.exception.ProductNotFoundException;
 import com.myretail.api.model.ProductDTO;
 import com.myretail.api.model.ProductPriceDTO;
 import com.myretail.api.service.ProductServiceImpl;
+import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -27,7 +28,7 @@ public class ProductController {
                 throw new ProductNotFoundException(id);
             }
             return productDTO;
-        } catch (ProductNotFoundException e){
+        } catch (ProductNotFoundException | JSONException e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage(), e);
             // Add generic message for general exceptions
         } catch (Exception e) {
@@ -37,9 +38,12 @@ public class ProductController {
     }
 
     @PutMapping("/products/{id}")
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    // 201 for created new object
+    // 204 for updated existing object
     void updateProductPrice(@PathVariable int id, @RequestBody ProductDTO productDTO) {
         // Grab the id from the path variable. Sending an ID in JSON body is redundant.
+        // Don't have to return anything other than the status
         ProductPriceDTO productPriceDTO = productDTO.getProductPriceDTO();
         productPriceDTO.setId(id);
         productService.updateById(productPriceDTO);

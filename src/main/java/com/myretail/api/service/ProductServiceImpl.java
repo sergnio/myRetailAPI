@@ -48,6 +48,11 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductPriceDTO updateById(ProductPriceDTO productPriceDTO) {
+        if (productRepository.findById(productPriceDTO.getId()) != null) {
+            // return some message to say it was updated ?
+        } else {
+            // return some message to say it was a new object created ?
+        }
         return productRepository.save(productPriceDTO);
     }
 
@@ -69,11 +74,11 @@ public class ProductServiceImpl implements ProductService {
             // Convert to JSON to easier manipulate
             JSONObject json = new JSONObject(response);
 
-            return json.
-                    getJSONObject("product").
-                    getJSONObject("item").
-                    getJSONObject("product_description").
-                    get("title")
+            return json
+                    .getJSONObject("product")
+                    .getJSONObject("item")
+                    .getJSONObject("product_description")
+                    .get("title")
                     .toString();
         } catch (RestClientException e) {
             throw new ProductNotFoundException("No product id " + id + " found on GET request for URL: " + RESTUrl);
