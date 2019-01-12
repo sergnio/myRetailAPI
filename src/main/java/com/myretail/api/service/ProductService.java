@@ -16,5 +16,5 @@ public interface ProductService {
 
     List<ProductPriceDTO> findAll();
 
-    ProductPriceDTO updateById(int id, ProductPriceDTO productPriceDTO);
+    ProductPriceDTO updateById(ProductPriceDTO productPriceDTO) throws ProductNotFoundException;
 }
