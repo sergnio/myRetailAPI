@@ -2,10 +2,6 @@ package com.myretail.api.service;
 
 import com.myretail.api.exception.ProductNotFoundException;
 import com.myretail.api.model.ProductDTO;
-import com.myretail.api.model.ProductPriceDTO;
-import org.json.JSONException;
-
-import java.util.List;
 
 public interface ProductService {
     /**
