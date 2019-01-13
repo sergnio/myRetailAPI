@@ -33,7 +33,6 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductDTO findById(int id) throws ProductNotFoundException {
-        // Also make microservice calls here probably
         ProductPriceDTO productPriceDTO = productRepository.findById(id);
         String name = findProductNameById(id);
 
@@ -51,7 +50,8 @@ public class ProductServiceImpl implements ProductService {
         }
     }
 
-    private String findProductNameById(int id) throws JSONException, ProductNotFoundException {
+    @Override
+    public String findProductNameById(int id) throws JSONException, ProductNotFoundException {
         String RESTUrl = baseUrl + String.valueOf(id) + params;
 
         // TODO - create test case for when object doesn't exist: id=99999999
