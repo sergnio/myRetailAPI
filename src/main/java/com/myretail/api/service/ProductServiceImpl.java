@@ -42,33 +42,19 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<ProductPriceDTO> findAll() {
-        return productRepository.findAll();
-    }
-
-    @Override
-    public ProductPriceDTO updateById(ProductPriceDTO productPriceDTO) {
+    public void updateById(ProductPriceDTO productPriceDTO) throws ProductNotFoundException {
         if (productRepository.findById(productPriceDTO.getId()) != null) {
-            // return some message to say it was updated ?
+            productRepository.save(productPriceDTO);
         } else {
-            // return some message to say it was a new object created ?
+            // Throw an exception if the product id isn't found. Create a POST to create a new product.
+            throw new ProductNotFoundException(productPriceDTO.getId());
         }
-        return productRepository.save(productPriceDTO);
     }
 
-    // takes a productprice
-    // finds the name from the api
-    // creates a new product based off this information
-    // set id from the id param
     private String findProductNameById(int id) throws JSONException, ProductNotFoundException {
-         // Break out a BASE URl (up to tcin/)
-         // have the id param go before the rest of the
-         // excludes portion
-         // 13860428
         String RESTUrl = baseUrl + String.valueOf(id) + params;
 
         // TODO - create test case for when object doesn't exist: id=99999999
-        // Response is returned as a string
         try {
             String response = this.restTemplate.getForObject(RESTUrl, String.class);
             // Convert to JSON to easier manipulate

@@ -46,11 +46,11 @@ public class ProductController {
         // Don't have to return anything other than the status
         ProductPriceDTO productPriceDTO = productDTO.getProductPriceDTO();
         productPriceDTO.setId(id);
-        productService.updateById(productPriceDTO);
+        try {
+            productService.updateById(productPriceDTO);
+        } catch (ProductNotFoundException e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage(), e);
+        }
     }
 
-
-    @GetMapping("products/")
-    @ResponseStatus(HttpStatus.OK)
-    List<ProductPriceDTO> getAllProducts() { return productService.findAll(); }
 }
