@@ -38,9 +38,8 @@ public class ProductController {
     }
 
     @PutMapping("/products/{id}")
+    // No need to return a body. See https://tools.ietf.org/html/rfc2616#section-10.2.5
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    // 201 for created new object
-    // 204 for updated existing object
     void updateProductPrice(@PathVariable int id, @RequestBody ProductDTO productDTO) {
         // Grab the id from the path variable. Sending an ID in JSON body is redundant.
         // Don't have to return anything other than the status

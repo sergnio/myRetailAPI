@@ -7,8 +7,6 @@ public class ProductDTO {
     private int id;
     private String name;
     // Add JSON Property to match specifications
-    // NOTE: We can add JSON Property to the member variable because we aren't trying to match the variables
-    // to the database, unlike ProductPriceDTO:getCurrencyCode
     @JsonProperty("current_price")
     private ProductPriceDTO productPriceDTO;
 
