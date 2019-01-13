@@ -3,6 +3,7 @@ package com.myretail.api.controller;
 import com.myretail.api.exception.ProductNotFoundException;
 import com.myretail.api.model.ProductDTO;
 import com.myretail.api.model.ProductPriceDTO;
+import com.myretail.api.service.ProductPriceServiceImpl;
 import com.myretail.api.service.ProductServiceImpl;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,9 @@ public class ProductController {
 
     @Autowired
     private ProductServiceImpl productService;
+
+    @Autowired
+    private ProductPriceServiceImpl productPriceService;
 
     @GetMapping("products/{id}")
     @ResponseStatus(HttpStatus.OK)
@@ -46,7 +50,7 @@ public class ProductController {
         ProductPriceDTO productPriceDTO = productDTO.getProductPriceDTO();
         productPriceDTO.setId(id);
         try {
-            productService.updateById(productPriceDTO);
+            productPriceService.updateById(productPriceDTO);
         } catch (ProductNotFoundException e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage(), e);
         }

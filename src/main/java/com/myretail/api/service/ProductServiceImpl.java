@@ -24,16 +24,6 @@ public class ProductServiceImpl implements ProductService {
         return new ProductDTO(id, name, productPriceDTO);
     }
 
-    @Override
-    public void updateById(ProductPriceDTO productPriceDTO) throws ProductNotFoundException {
-        if (productRepository.findById(productPriceDTO.getId()) != null) {
-            productRepository.save(productPriceDTO);
-        } else {
-            // Throw an exception if the product id isn't found. Create a POST to create a new product.
-            throw new ProductNotFoundException(productPriceDTO.getId());
-        }
-    }
-
 }
 
 
