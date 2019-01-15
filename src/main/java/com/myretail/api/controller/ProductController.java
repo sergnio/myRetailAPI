@@ -39,6 +39,12 @@ public class ProductController {
         }
     }
 
+    @GetMapping("hello")
+    @ResponseStatus(HttpStatus.OK)
+    String test() {
+        return "Test";
+    }
+
     @PutMapping("/products/{id}")
     // No need to return a body. See https://tools.ietf.org/html/rfc2616#section-10.2.5
     @ResponseStatus(HttpStatus.NO_CONTENT)
