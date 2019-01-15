@@ -39,7 +39,13 @@ public class ProductController {
         }
     }
 
-    @PutMapping("/products/{id}")
+    @GetMapping("hello")
+    @ResponseStatus(HttpStatus.OK)
+    String hello() {
+        return "Hello";
+    }
+
+    @PutMapping("products/{id}")
     // No need to return a body. See https://tools.ietf.org/html/rfc2616#section-10.2.5
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void updateProductPrice(@PathVariable int id, @RequestBody ProductDTO productDTO) {

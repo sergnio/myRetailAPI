@@ -4,7 +4,9 @@ import com.myretail.api.exception.ProductNotFoundException;
 import com.myretail.api.model.ProductPriceDTO;
 import com.myretail.api.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ProductPriceServiceImpl implements ProductPriceService {
 
     @Autowired
