@@ -8,6 +8,10 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 // ensures we are querying the 'productprice' collection
 @Document(collection = "productprice")
+/**
+ * ProductPriceDTO.
+ * NOTE: This is only exposed via API through a ProductDTO.
+ */
 public class ProductPriceDTO {
 
     @JsonIgnore

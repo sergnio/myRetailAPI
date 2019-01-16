@@ -2,6 +2,9 @@ package com.myretail.api.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * Product DTO containing relevant information regarding a product.
+ */
 public class ProductDTO {
 
     private int id;
