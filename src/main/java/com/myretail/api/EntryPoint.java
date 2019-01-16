@@ -5,7 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 //import com.myretail.api.repository.ProductRepository;
 
-// Initialize our spring boot application on the App entry point
+/**
+ * Initialize our spring boot application on the App entry point
+ */
 @SpringBootApplication
 public class EntryPoint {
 
