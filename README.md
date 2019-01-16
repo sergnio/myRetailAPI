@@ -53,3 +53,10 @@ Example:
 ```
 
 ***
+
+
+Install java, maven on gc compute
+https://tecadmin.net/install-apache-maven-on-debian/
+
+Install mongo on gc compute
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-debian/#install-mongodb-community-edition 
