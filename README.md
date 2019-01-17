@@ -113,12 +113,15 @@ Example:
 	}
 }
 ```
-# Future Contributions
+# Steps until production
+
+For an MVP 1, this application would need at the minimum:
+1) More end-to-end, integration, and unit tests
+2) CI/CD builds
+3) HTTPS
 
 Certain things I would like to have completed/started  
-1) More end-to-end, integration, and unit tests
-2) All response messages in JSON format
-3) CI/CD builds
-4) Logging
-5) HTTPS
-6) Hosted in Docker container
+1) All response messages in JSON format
+2) Logging
+3) Hosted in Docker container
+4) Run on port 80, or 443 for HTTPS
