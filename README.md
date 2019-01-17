@@ -1,8 +1,6 @@
 
 
 # myRetailAPI
-myRetailAPI is an application built for the hungry developers who need to consume API from a rapidly growing company in Richmond.
-
 This is an end-to-end proof of concept for a products API, which aggregates product data from multiple sources and returns the data as JSON.
 
 <h3>Technologies</h3>
