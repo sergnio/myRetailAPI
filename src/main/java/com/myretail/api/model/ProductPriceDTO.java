@@ -4,23 +4,30 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
-// @Document ensures we are querying the 'productprice' collection
+// ensures we are querying the 'productprice' collection
 @Document(collection = "productprice")
-public class ProductPrice {
+/**
+ * ProductPriceDTO.
+ * NOTE: This is only exposed via API through a ProductDTO.
+ */
+public class ProductPriceDTO {
 
     @JsonIgnore
     @Id private int id;
     private double value;
-    private String currency_code;
+    // Tells Mongo to look for this currency_code, rather than the Java property currencyCode
+    @Field("currency_code")
+    private String currencyCode;
 
-    public ProductPrice() {
+    public ProductPriceDTO() {
     }
 
-    public ProductPrice(int id, double value, String currencyCode) {
+    public ProductPriceDTO(int id, double value, String currencyCode) {
         this.id = id;
         this.value = value;
-        this.currency_code = currencyCode;
+        this.currencyCode = currencyCode;
     }
 
     public int getId() {
@@ -42,10 +49,10 @@ public class ProductPrice {
     // Add JSON Property to match specifications
     @JsonProperty("currency_code")
     public String getCurrencyCode() {
-        return currency_code;
+        return currencyCode;
     }
 
     public void setCurrencyCode(String currencyCode) {
-        this.currency_code = currencyCode;
+        this.currencyCode = currencyCode;
     }
 }
