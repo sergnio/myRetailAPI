@@ -14,6 +14,7 @@ public class ProductPriceServiceImpl implements ProductPriceService {
 
     @Override
     public void updateById(ProductPriceDTO productPriceDTO) throws ProductNotFoundException {
+        // First check if the product doesn't exist before we update. Creation is not done here.
         if (productRepository.findById(productPriceDTO.getId()) != null) {
             productRepository.save(productPriceDTO);
         } else {
