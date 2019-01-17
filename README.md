@@ -115,7 +115,7 @@ Example:
 ```
 # Future Contributions
 
-Certain things I would like this application to have
+Certain things I would like to have completed/started  
 1) More end-to-end, integration, and unit tests
 2) All response messages in JSON format
 3) CI/CD builds
