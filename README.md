@@ -1,7 +1,7 @@
 
 
 # myRetailAPI
-This is an end-to-end proof of concept for a products API, which aggregates product data from multiple sources and returns the data as JSON.
+This is an end-to-end [Spring Boot](https://spring.io/projects/spring-boot) Java project proof of concept for a products API, which aggregates product data from multiple sources and returns the data as JSON.
 
 <h3>Technologies</h3>
 
@@ -16,7 +16,9 @@ Install [Java](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-dow
 
 Install [Maven](https://maven.apache.org/install.html), the build and dependency manager for this project.
 
-Install [MongoDB](https://docs.mongodb.com/manual/administration/install-community/). After installed, start the mongo services.
+Install [MongoDB](https://docs.mongodb.com/manual/administration/install-community/). 
+
+After Mongo is installed, start the mongo services.
 
 Once mongo is up and running, start up the mongo shell with the command
 ```
@@ -49,7 +51,7 @@ run a ```mvn install``` to grab all dependencies, compiles java files to class f
 mvn install
 java -jar target/products-api-0.0.1-SNAPSHOT.jar
 ```
-After the build has completed, head over to [localhost:8080/v1/health](localhost:8080/v1/health), and you should simply see a message - "Server is running"
+After the build has completed, head over to [localhost:8080/v1/health](localhost:8080/v1/health), and you should see a simple message - "Server is running"
 
 Congrats! 
 # Live version
