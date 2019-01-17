@@ -4,7 +4,13 @@ myRetailAPI is an application built for the hungry developers who need to consum
 
 This is an end-to-end proof of concept for a products API, which aggregates product data from multiple sources and returns the data as JSON.
 
-This project uses Java, MongoDB, Maven.
+<h3>Technologies</h3>
+
+Java 8 (compatible with 11) 
+
+MongoDB 4.0.4 
+
+Maven 4.0.0 
 
 # Setup
 Install [Java](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) if you haven't already. This project uses JDK8, but is compatible up to JDK11
@@ -50,8 +56,8 @@ Congrats!
 # Live version
 Instead of running locally, you may visit http://35.192.104.36:8080 for a live version of the demo. This is run on a Google Cloud Compute, Debian 9 instance.
 
-Example queries:
- [http://35.192.104.36:8080/v1/products/13860419](http://35.192.104.36:8080/v1/products/13860419)
+Example queries:  
+ [http://35.192.104.36:8080/v1/products/13860419](http://35.192.104.36:8080/v1/products/13860419)  
  [http://35.192.104.36:8080/v1/products/13860421](http://35.192.104.36:8080/v1/products/13860421)
 
 
