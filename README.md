@@ -113,4 +113,12 @@ Example:
 	}
 }
 ```
+# Future Contributions
 
+Certain things I would like this application to have
+1) More end-to-end, integration, and unit tests
+2) All response messages in JSON format
+3) CI/CD builds
+4) Logging
+5) HTTPS
+6) Hosted in Docker container
