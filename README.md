@@ -29,8 +29,8 @@ Create a new ```productprice``` database by using this command, and enter some d
 use productprice
 
 db.productprice.insertMany( [
-{ _id: 13860428, value: 100.03, currency_code: "USA" },
-{ _id: 13860429, value: 90.43, currency_code: "USA" },
+{ _id: 13860428, value: 100.03, currency_code: "USD" },
+{ _id: 13860429, value: 90.43, currency_code: "USD" },
 { _id: 13860425, value: 50, currency_code: "EUR" },
 { _id: 13860424, value: 1350, currency_code: "EUR" },
 { _id: 13860421, value: 12.59, currency_code: "CNY" },
@@ -80,7 +80,7 @@ Example:
     "name": The Big Lebowski (Blu-ray)
 	"current_price": {
 		"value": 100.03,
-		"currency_code": "USA"
+		"currency_code": "USD"
 	}
 }
 ```
