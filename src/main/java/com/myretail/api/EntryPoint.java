@@ -3,7 +3,6 @@ package com.myretail.api;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-//import com.myretail.api.repository.ProductRepository;
 
 /**
  * Initialize our spring boot application on the App entry point

@@ -33,7 +33,7 @@ public class ProductController {
      */
     @GetMapping("products/{id}")
     @ResponseStatus(HttpStatus.OK)
-    ProductDTO getProduct(@PathVariable int id) {
+    public ProductDTO getProduct(@PathVariable int id) {
         try {
             ProductDTO productDTO = productService.findById(id);
             if (productDTO == null) {
@@ -49,7 +49,6 @@ public class ProductController {
         }
     }
 
-
     /**
      * Updates a product price, given a productPrice object.
      * @param id product id
@@ -58,7 +57,7 @@ public class ProductController {
     @PutMapping("products/{id}")
     // No need to return a body. See https://tools.ietf.org/html/rfc2616#section-10.2.5
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    void updateProductPrice(@PathVariable int id, @RequestBody ProductDTO productDTO) {
+    public void updateProductPrice(@PathVariable int id, @RequestBody ProductDTO productDTO) {
         // Grab the id from the path variable. Sending an ID in JSON body is redundant.
         // Don't have to return anything other than the status
         ProductPriceDTO productPriceDTO = productDTO.getProductPriceDTO();
@@ -71,7 +70,15 @@ public class ProductController {
             throw new ResponseStatusException(
                     HttpStatus.INTERNAL_SERVER_ERROR, "Something has gone wrong. Please check logs.", e);
         }
-
     }
 
+    /**
+     * An extremely simple API to check if server is running.
+     * @return basic string.
+     */
+    @GetMapping("health")
+    @ResponseStatus(HttpStatus.OK)
+    public String health() {
+        return "Server is running";
+    }
 }

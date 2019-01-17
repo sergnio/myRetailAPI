@@ -27,7 +27,6 @@ public class RedSkyServiceImpl implements RedSkyService {
     public String findProductNameById(int id) throws JSONException, ProductNotFoundException {
         String RESTUrl = baseUrl + String.valueOf(id) + params;
 
-        // TODO - create test case for when object doesn't exist: id=99999999
         try {
             String response = this.restTemplate.getForObject(RESTUrl, String.class);
             // Convert to JSON to easier manipulate
