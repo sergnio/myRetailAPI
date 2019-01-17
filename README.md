@@ -1,4 +1,5 @@
 
+
 # myRetailAPI
 myRetailAPI is an application built for the hungry developers who need to consume API from a rapidly growing company in Richmond.
 
@@ -63,11 +64,10 @@ Example queries:
 
 # API 
 These are valid endpoints included in this application.  
-**NOTE**: You will have to use an API testing tool, such as [Postman](https://www.getpostman.com/) to test the ```PUT``` 
-
-**Description**: Get an existing product name from an external API and combine with the current pricing from our database.
 
 <h3>GET	../v1/products/{id}</h3>
+
+**Description**: Get an existing product name from an external API and combine with the current pricing from our database.
 
 Valid demo product ids: [13860428](http://35.192.104.36:8080/v1/products/13860428), [13860429](http://35.192.104.36:8080/v1/products/13860429), [13860425](http://35.192.104.36:8080/v1/products/13860425), [13860424](http://35.192.104.36:8080/v1/products/13860424), [13860421](http://35.192.104.36:8080/v1/products/13860421), [13860419](http://35.192.104.36:8080/v1/products/13860419)
 
@@ -87,9 +87,11 @@ Example:
 
 ***
 
-**Description**:  If a product price with {id} exists, update an existing product price
-
 <h3>PUT	../v1/products/{id}</h3>
+
+**NOTE**: You will have to use an API testing tool, such as [Postman](https://www.getpostman.com/) to test the ```PUT``` 
+
+**Description**:  If a product price with {id} exists, update an existing product price
 
 Valid demo product ids: 13860428, 13860429, 13860425, 13860424, 13860421, 13860419
 
