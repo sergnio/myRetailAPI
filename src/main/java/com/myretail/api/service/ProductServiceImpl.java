@@ -20,7 +20,6 @@ public class ProductServiceImpl implements ProductService {
         ProductPriceDTO productPriceDTO = productRepository.findById(id);
         String name = redSkyService.findProductNameById(id);
 
-        // TODO - check how these microservices are actually done?? JP
         return new ProductDTO(id, name, productPriceDTO);
     }
 
